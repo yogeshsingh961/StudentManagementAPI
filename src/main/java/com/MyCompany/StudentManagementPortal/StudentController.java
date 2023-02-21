@@ -11,22 +11,22 @@ public class StudentController {
     Map<String,Student> db1 = new HashMap<>();// database where key is name
 
     // using name,get details
-//    @GetMapping("/get_infobyName")
-//    Student getStudentByName(@RequestParam("q") String name){
-//        return db1.get(name);
-//    }
-//    @PostMapping("/add")
-//    String addStudent(@RequestBody() Student student){
-//        db1.put(student.getName(),student);
-//        return "Student is added successfully";
-//    }
-//
-//    @DeleteMapping("/deleteName/{q}")
-//    String deleteStudent(@PathVariable("q") String name){
-//        db1.remove(name);
-//        return "Student Deleted";
-//
-//    }
+    @GetMapping("/get_infobyName")
+    Student getStudentByName(@RequestParam("q") String name){
+        return db1.get(name);
+    }
+    @PostMapping("/add")
+    String addStudent(@RequestBody() Student student){
+        db1.put(student.getName(),student);
+        return "Student is added successfully";
+    }
+
+    @DeleteMapping("/deleteName/{q}")
+    String deleteStudent(@PathVariable("q") String name){
+        db1.remove(name);
+        return "Student Deleted";
+
+    }
 
    // using admissionNo, get details
     @GetMapping("/get_info")  //get information by admissionNo
