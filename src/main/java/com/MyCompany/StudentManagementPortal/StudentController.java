@@ -50,12 +50,12 @@ public class StudentController {
 
     // update student based on admissionNo
 
-//    @PutMapping("/Update")
-//    String updateStudnet(@RequestParam("q1") int first,@RequestParam("q2") int second){
-//         Student temp=db.get(first);
-//         db.put(first,db.get(second));
-//         db.put(second,temp);
-//         return "Students are updated";
-//
-//    }
+    @PutMapping("/Update")
+    String updateStudnet(@RequestParam("q1") int first,@RequestParam("q2") int second){
+         Student temp=db.get(first);
+         db.put(first,db.get(second));
+         db.put(second,temp);
+         return "Students are updated";
+
+    }
 }
