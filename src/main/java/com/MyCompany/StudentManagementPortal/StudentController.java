@@ -16,7 +16,7 @@ public class StudentController {
         return db1.get(name);
     }
     @PostMapping("/add")
-    String addStudent(@RequestBody() Student student){
+    String addStudentByName(@RequestBody() Student student){
         db1.put(student.getName(),student);
         return "Student is added successfully";
     }
