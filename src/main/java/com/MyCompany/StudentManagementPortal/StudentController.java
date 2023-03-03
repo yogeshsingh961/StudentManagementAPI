@@ -10,9 +10,9 @@ public class StudentController {
     Map<Integer,Student> db= new HashMap<>(); //database where key is admissionNp
     Map<String,Student> db1 = new HashMap<>();// database where key is name
 
-    // using name,get details
+    // using name,get details using db1 database
     @GetMapping("/get_infobyName")
-    Student getStudentByName(@RequestParam("q") String name){
+    Student getStudentByName(@RequestParam String name){  //Student getStudentByName(@RequeetParam("q" String name){
         return db1.get(name);
     }
     @PostMapping("/add")
@@ -28,34 +28,34 @@ public class StudentController {
 
     }
 
-   // using admissionNo, get details
-    @GetMapping("/get_info")  //get information by admissionNo
-   Student getStudent(@RequestParam("q") int admissionNo){
-        return db.get(admissionNo);
-    }
-
-    @PostMapping("/add")
-    String addStudent(@RequestBody() Student student){
-        db.put(student.getAdmissionNo(),student);
-        return "Student is added successfully";
-
-    }
-
-    @DeleteMapping("/delete/{q}")
-    String deleteStudent(@PathVariable("q") int admissionNo){
-        db.remove(admissionNo);
-        return "Student Deleted";
-
-    }
-
-    // update student based on admissionNo
-
-    @PutMapping("/Update")
-    String updateStudnet(@RequestParam("q1") int first,@RequestParam("q2") int second){
-         Student temp=db.get(first);
-         db.put(first,db.get(second));
-         db.put(second,temp);
-         return "Students are updated";
-
-    }
+   // using admissionNo, get details using db database
+//    @GetMapping("/get_info")  //get information by admissionNo
+//   Student getStudent(@RequestParam("q") int admissionNo){
+//        return db.get(admissionNo);
+//    }
+//
+//    @PostMapping("/add")
+//    String addStudent(@RequestBody() Student student){
+//        db.put(student.getAdmissionNo(),student);
+//        return "Student is added successfully";
+//
+//    }
+//
+//    @DeleteMapping("/delete/{q}")
+//    String deleteStudent(@PathVariable("q") int admissionNo){
+//        db.remove(admissionNo);
+//        return "Student Deleted";
+//
+//    }
+//
+//    // update student based on admissionNo
+//
+//    @PutMapping("/Update")
+//    String updateStudnet(@RequestParam("q1") int first,@RequestParam("q2") int second){
+//         Student temp=db.get(first);
+//         db.put(first,db.get(second));
+//         db.put(second,temp);
+//         return "Students are updated";
+//
+//    }
 }
